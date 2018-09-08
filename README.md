@@ -13,7 +13,7 @@
 
 # Пример запросов
 #### curl "127.0.0.1:8003/v1/forecast/?city=Tambov&dt=2018-09-11" 
-{"city": "Tambov", "unit": "celsius", "temperature": 25}%  
+{"city": "Tambov", "unit": "celsius", "temperature": 25}
 
 #### curl "127.0.0.1:8003/v1/current/?city=Tambov"
 {"city": "Tambov", "unit": "celsius", "temperature": 16} 
