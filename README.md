@@ -7,7 +7,7 @@
 ## 1 - git clone https://github.com/Ho7/mai_forecast.git
 ## 2 - cd mai_forecast
 ## 3 - sudo apt install python3 python3-pip
-## 4 - pip3 install -r requirements
+## 4 - pip3 install -r requirements.txt
 ## 5 - python3 manage.py runserver
 
 
