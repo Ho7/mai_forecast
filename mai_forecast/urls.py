@@ -20,6 +20,6 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('v1/current/', views.get_current_weather),
-    path('v1/forecast/', views.get_weather_for_date),
+    path('v1/current/', views.Weather.as_view()),
+    path('v1/forecast/', views.Weather.as_view()),
 ]

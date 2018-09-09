@@ -8,7 +8,7 @@ if __name__ == '__main__':
     from django.core.management.commands.runserver import Command as runserver
     from django.conf import settings
 
-    runserver.default_port = settings.LISTEN_PORT
+    runserver.default_port = int(os.getenv('LISTEN_PORT', settings.LISTEN_PORT))
 
     try:
         from django.core.management import execute_from_command_line

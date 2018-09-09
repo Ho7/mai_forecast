@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
@@ -117,8 +117,9 @@ USE_L10N = True
 USE_TZ = True
 
 LISTEN_PORT = 8003
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
+API_TOKEN_WEATHER = '05b0bda0-4da5-46ed-82e4-95de4ec3caef'
+API_TOKEN_SEARCH_CITY = 'Z2MB4Nnp3gP3AGE7y1zmHmbmPZase1KW'
+URL_WEATHER = 'https://api.weather.yandex.ru/v1/forecast'
+URL_SEARCH_CITY = 'http://open.mapquestapi.com/geocoding/v1/batch'
 
 STATIC_URL = '/static/'
