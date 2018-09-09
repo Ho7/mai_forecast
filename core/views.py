@@ -1,8 +1,4 @@
-import requests
-import json
-
-from django.http import HttpResponse, JsonResponse
-from rest_framework import status
+from django.http import JsonResponse
 from rest_framework.views import APIView
 from core.weather_client import Forecast, ForecastError
 
@@ -10,7 +6,7 @@ from core import serializers
 
 
 class Weather(APIView):
-    serializer_class = serializers.Weather
+    serializer_class = serializers.WeatherSerializer
 
     def get(self, *args, **kwargs):
         serializer = self.get_serializer()

@@ -9,6 +9,7 @@ class ForecastError(Exception):
     def __init__(self, info, *args, **kwargs):
         self.info = info
 
+
 class Forecast:
     def __init__(self, city: str, date: datetime.date = None):
         self.city = city
