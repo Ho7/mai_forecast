@@ -7,7 +7,7 @@
 - Перейдем в директорию проекта - ```cd mai_forecast```
 - Установим питон и менеджер питон-пакетов - ```sudo apt install python3 python3-pip```
 - Установим зависимости - ```pip3 install -r requirements.txt```
-- Экспортируем перменную окружения и установим значение порта - ```export LISTEN_PORT = 8003```
+- Экспортируем перменную окружения и установим значение порта - ```export LISTEN_PORT=8003```
 - Запустим сервер -  ```python3 manage.py runserver```
 
 
