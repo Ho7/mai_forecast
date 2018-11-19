@@ -26,28 +26,22 @@ class Forecast:
         }
 
         city_coords = self._get_city_coords()
-        weather_params = self.get_weather_params()
 
-        weather_params.update({
-            'lat': city_coords[0],
-            'lon': city_coords[1],
-        })
-
-        response = requests.get(self.get_weather_url(), params=self.get_weather_params(), headers=self.get_weather_headers())
+        if self.date:
+            date = datetime.datetime.strptime(self.date, '%Y-%m-%d').timestamp().as_integer_ratio()[0]
+            print(date)
+            response = requests.get(self.get_weather_url() +
+                                    f'/{self.get_weather_token()}/{city_coords[0]},{city_coords[1]},{date}', params=self.get_weather_params())
+        else:
+            response = requests.get(self.get_weather_url() +
+                                    f'/{self.get_weather_token()}/{city_coords[0]},{city_coords[1]}', params=self.get_weather_params())
 
         if response.status_code >= 300:
             raise ForecastError('Ошибка получения прогноза: %s' % response.text)
 
         response_text_dict = json.loads(response.text)
 
-        result['temperature'] = response_text_dict['fact']['temp']
-
-        if self.date:
-            date_list = response_text_dict['forecasts']
-
-            for item in date_list:
-                if item['date'] == self.date:
-                    result['temperature'] = item['parts']['day']['temp_avg']
+        result['temperature'] = response_text_dict['currently']['temperature']
 
         return result
 
@@ -61,9 +55,6 @@ class Forecast:
         lat = response_text_dict['results'][0]['locations'][0]['latLng']['lat']
         lng = response_text_dict['results'][0]['locations'][0]['latLng']['lng']
         return lat, lng
-
-    def get_weather_headers(self):
-        return {'X-Yandex-API-Key': self.get_weather_token()}
 
     def get_search_params(self):
         return {'key': self.get_search_token(), 'location': self.city}
@@ -86,7 +77,7 @@ class Forecast:
 
     @staticmethod
     def get_weather_params():
-        return {'lang': 'ru_RU', 'extra': True}
+        return {'lang': 'ru', 'units': 'si'}
 
     @staticmethod
     def get_temperature_unit():

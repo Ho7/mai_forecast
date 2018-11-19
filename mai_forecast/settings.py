@@ -117,9 +117,9 @@ USE_L10N = True
 USE_TZ = True
 
 LISTEN_PORT = 8003
-API_TOKEN_WEATHER = '05b0bda0-4da5-46ed-82e4-95de4ec3caef'
+API_TOKEN_WEATHER = '81769aa5ca96cd04869f346b1e92ee2b'
 API_TOKEN_SEARCH_CITY = 'Z2MB4Nnp3gP3AGE7y1zmHmbmPZase1KW'
-URL_WEATHER = 'https://api.weather.yandex.ru/v1/forecast'
+URL_WEATHER = 'https://api.darksky.net/forecast'
 URL_SEARCH_CITY = 'http://open.mapquestapi.com/geocoding/v1/batch'
 
 STATIC_URL = '/static/'
