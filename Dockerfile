@@ -9,6 +9,7 @@ RUN apt-get clean && \
     apt-get install -y python3-pip && \
     apt-get install -y locales
 
+RUN ln -fs /usr/bin/python3.6 /usr/bin/python3
 RUN locale-gen ru_RU.UTF-8
 ENV LANG ru_RU.UTF-8
 ENV LANGUAGE ru_RU:ru
