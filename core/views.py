@@ -22,7 +22,6 @@ class Weather(APIView):
             weather_info = {
                 'error': e.info
             }
-
         return JsonResponse(weather_info)
 
     def get_serializer(self):

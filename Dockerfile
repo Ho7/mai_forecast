@@ -17,7 +17,9 @@ ENV LC_ALL ru_RU.UTF-8
 
 RUN pip3 install django==2.1 \
                  djangorestframework==3.8.2 \
-                 requests
+                 requests \
+                 prometheus_client \
+                 django-prometheus
 
 COPY . /opt/forecast
 WORKDIR /opt/forecast

@@ -29,7 +29,7 @@ class Forecast:
 
         if self.date:
             date = datetime.datetime.strptime(self.date, '%Y-%m-%d').timestamp().as_integer_ratio()[0]
-            print(date)
+
             response = requests.get(self.get_weather_url() +
                                     f'/{self.get_weather_token()}/{city_coords[0]},{city_coords[1]},{date}', params=self.get_weather_params())
         else:

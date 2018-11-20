@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from core import views
 
@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('v1/current/', views.Weather.as_view()),
     path('v1/forecast/', views.Weather.as_view()),
+    path('', include('django_prometheus.urls')),
+
 ]
