@@ -16,7 +16,8 @@ ENV LANGUAGE ru_RU:ru
 ENV LC_ALL ru_RU.UTF-8
 
 RUN pip3 install django==2.1 \
-                 djangorestframework==3.8.2
+                 djangorestframework==3.8.2 \
+                 requests
 
 COPY . /opt/forecast
 WORKDIR /opt/forecast
