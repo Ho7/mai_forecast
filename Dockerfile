@@ -1,6 +1,10 @@
 FROM ubuntu:16.04
 
-RUN apt-get clean && apt-get update && \
+RUN apt-get clean && \
+    apt-get update && \
+    apt-get install software-properties-common && \
+    add-apt-repository ppa:jonathonf/python-3.6 && \
+    apt-get update && \
     apt-get install python3.6 && \
     apt-get install -y python3-pip && \
     apt-get install -y locales
