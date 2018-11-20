@@ -10,4 +10,4 @@ ENV LC_ALL ru_RU.UTF-8
 
 RUN pip3 install -r requirements.txt
 
-CMD python3 manage.py runser
+CMD python3 manage.py runserver
