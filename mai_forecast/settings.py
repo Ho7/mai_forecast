@@ -128,6 +128,6 @@ URL_SEARCH_CITY = 'http://open.mapquestapi.com/geocoding/v1/batch'
 
 REDIS_HOST = '185.22.60.103'
 # REDIS_HOST = '127.0.0.1'
-REDIS_PORT = 6000
+REDIS_PORT = 22222
 # REDIS_PORT = 6379
 STATIC_URL = '/static/'
