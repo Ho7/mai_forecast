@@ -19,7 +19,8 @@ RUN pip3 install django==2.1 \
                  djangorestframework==3.8.2 \
                  requests \
                  prometheus_client \
-                 django-prometheus
+                 django-prometheus \
+                 redis
 
 COPY . /opt/forecast
 WORKDIR /opt/forecast

@@ -126,4 +126,8 @@ API_TOKEN_SEARCH_CITY = 'Z2MB4Nnp3gP3AGE7y1zmHmbmPZase1KW'
 URL_WEATHER = 'https://api.darksky.net/forecast'
 URL_SEARCH_CITY = 'http://open.mapquestapi.com/geocoding/v1/batch'
 
+REDIS_HOST = '185.22.60.103'
+# REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6000
+# REDIS_PORT = 6379
 STATIC_URL = '/static/'

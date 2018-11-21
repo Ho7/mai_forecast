@@ -1,12 +1,16 @@
-from django.http import JsonResponse
+from django.http import HttpResponse
 from rest_framework.views import APIView
-from core.weather_client import Forecast, ForecastError
 
+from mai_forecast import settings
+from core.weather_client import Forecast, ForecastError
 from core import serializers
 
 
 class Weather(APIView):
     serializer_class = serializers.WeatherSerializer
+
+    def put(self, *args, **kwargs):
+        pass
 
     def get(self, *args, **kwargs):
         serializer = self.get_serializer()
@@ -22,10 +26,13 @@ class Weather(APIView):
             weather_info = {
                 'error': e.info
             }
-        return JsonResponse(weather_info)
+        return HttpResponse(weather_info)
 
     def get_serializer(self):
         serializer = self.serializer_class(data=self.request.GET)
         return serializer
 
+    @staticmethod
+    def redis():
+        pass
 
